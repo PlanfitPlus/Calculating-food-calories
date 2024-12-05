@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة القيم الغذائية الشاملة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat pulse"></i>
+            </div>
+            <h1>حاسبة القيم الغذائية الشاملة</h1>
+            <p>احسب السعرات الحرارية والبروتين والكربوهيدرات والدهون في طعامك</p>
+        </header>
+
+        <main>
+            <div class="calculator card-effect">
+                <div class="food-input">
+                    <div class="input-group">
+                        <label for="foodSelect">اختر نوع الطعام</label>
+                        <div class="search-container">
+                            <input type="text" id="foodSearch" placeholder="ابحث عن الطعام..." class="food-search">
+                            <button id="searchButton" class="search-button">
+                                <i class="fas fa-search"></i>
+                                بحث
+                            </button>
+                        </div>
+                        <select id="foodSelect">
+                            <option value="">اختر نوع الطعام</option>
+                            
+                            <!-- اللحوم -->
+                            <option value="lean_beef">لحم بقر خالي من الدهون</option>
+                            <option value="beef_tenderloin">عرق اللحم</option>
+                            <option value="beef_jerky">لحم البقر المجفف</option>
+                            <option value="lamb">لحم الغنم</option>
+                            <option value="veal">لحم العجل</option>
+
+                            <!-- الدواجن -->
+                            <option value="grilled_chicken">صدور دجاج مشوية</option>
+                            <option value="smoked_chicken">لحم الدجاج المدخن</option>
+                            <option value="turkey">لحم ديك رومي</option>
+                            <option value="duck_breast">صدور البط</option>
+
+                            <!-- الأسماك والمأكولات البحرية -->
+                            <option value="salmon">سمك السلمون</option>
+                            <option value="tuna">سمك التونة</option>
+                            <option value="canned_tuna">لحم التونا المعلب</option>
+                            <option value="cod">سمك القد</option>
+                            <option value="shrimp">الروبيان (جمبري)</option>
+                            <option value="frozen_shrimp">الروبيان المجمد</option>
+                            <option value="squid">لحم الحبار</option>
+
+                            <!-- البيض ومنتجات الألبان -->
+                            <option value="egg_white">بياض البيض</option>
+                            <option value="whole_egg">البيض الكامل</option>
+                            <option value="quail_eggs">بيض السمان</option>
+                            <option value="greek_yogurt">لبن الزبادي اليوناني</option>
+                            <option value="protein_yogurt">زبادي البروتين</option>
+                            <option value="low_fat_milk">حليب قليل الدسم</option>
+                            <option value="almond_milk">حليب اللوز</option>
+                            <option value="soy_milk">حليب الصويا</option>
+                            <!-- الخضروات -->
+<option value="spinach">سبانخ</option>
+<option value="carrot">جزر</option>
+<option value="broccoli">بروكلي</option>
+<option value="cauliflower">قرنبيط</option>
+<option value="cucumber">خيار</option>
+<option value="tomato">طماطم</option>
+<option value="bell_pepper">فلفل حلو</option>
+<option value="zucchini">كوسا</option>
+<option value="eggplant">باذنجان</option>
+<option value="green_beans">فاصوليا خضراء</option>
+<option value="okra">بامية</option>
+<option value="artichoke">خرشوف</option>
+<option value="asparagus">هليون</option>
+<option value="beetroot">شمندر</option>
+<option value="cabbage">ملفوف</option>
+<option value="celery">كرفس</option>
+<option value="garlic">ثوم</option>
+<option value="onion">بصل</option>
+<option value="parsley">بقدونس</option>
+<option value="radish">فجل</option>
+                            <!-- الأجبان -->
+                            <option value="ricotta">جبن القريش (ريكوتا)</option>
+                            <option value="cheddar">جبن شيدر منخفض الدهون</option>
+                            <option value="mozzarella">جبن الموزاريلا</option>
+                            <option value="feta">جبن فيتا</option>
+ 
+                              <!-- خضروات إضافية -->
+<option value="sweet_potato">بطاطا حلوة</option>
+<option value="pumpkin">قرع</option>
+<option value="mushrooms">فطر</option>
+<option value="corn">ذرة</option>
+<option value="green_peas">بازلاء خضراء</option>
+<option value="brussels_sprouts">كرنب بروكسل</option>
+<option value="sweet_pepper">فلفل حلو</option>
+<option value="lettuce">خس</option>
+<option value="watercress">جرجير</option>
+<option value="turnip">لفت</option>
+<option value="leek">كراث</option>
+<option value="kale">كرنب</option>
+<option value="arugula">جرجير</option>
+<option value="green_onion">بصل أخضر</option>
+<option value="red_cabbage">ملفوف أحمر</option>
+                            <!-- البروتينات النباتية -->
+                            <option value="tofu">توفو</option>
+                            <option value="tempeh">تمبيه</option>
+                            <option value="soy_protein">بروتين الصويا</option>
+                            <option value="whey_protein">بروتين مصل الحليب</option>
+                            <option value="casein">بروتين الكازين</option>
+                            <option value="plant_protein">مكملات البروتين النباتي</option>
+                            <option value="brown_rice_protein">بروتين الأرز البني</option>
+
+                            <!-- البقوليات -->
+                            <option value="red_beans">الفاصوليا الحمراء</option>
+                            <option value="white_beans">الفاصوليا البيضاء</option>
+                            <option value="black_beans">الفول الأسود</option>
+                            <option value="chickpeas">الحمص</option>
+                            <option value="lentils">العدس</option>
+                            <option value="peas">البازلاء</option>
+
+                            <!-- الحبوب والنشويات -->
+                            <option value="oats">الشوفان</option>
+                            <option value="brown_rice">الأرز البني</option>
+                            <option value="white_rice">الأرز الأبيض</option>
+                            <option value="black_rice">الأرز الأسود</option>
+                            <option value="red_rice">الأرز الأحمر</option>
+                            <option value="basmati_rice">الأرز البسمتي</option>
+                            <option value="quinoa">الكينوا</option>
+                            <option value="bulgur">البرغل</option>
+                            <option value="couscous">الكسكس</option>
+                            <option value="whole_couscous">الكسكسي الكامل</option>
+                            <option value="corn">الذرة</option>
+                            <option value="potato">البطاطا العادية</option>
+                            <option value="sweet_potato">البطاطا الحلوة</option>
+                            <option value="purple_potato">البطاطا الأرجوانية</option>
+
+                            <!-- الخبز والمعكرونة -->
+                            <option value="brown_bread">الخبز الأسمر</option>
+                            <option value="whole_grain_bread">الخبز المصنوع من الحبوب الكاملة</option>
+                            <option value="oat_bread">خبز الشوفان</option>
+                            <option value="mixed_grain_bread">الخبز بالحبوب المختلطة</option>
+                            <option value="french_bread">الخبز الفرنسي</option>
+                            <option value="whole_pasta">المكرونة الكاملة</option>
+                            <option value="yellow_pasta">المكرونة الصفراء</option>
+                            <option value="whole_wheat_pasta">معكرونة القمح الكامل</option>
+                            <option value="rice_noodles">معكرونة الأرز</option>
+                            <option value="whole_vermicelli">الشعيرية الكاملة</option>
+                            <option value="whole_tortilla">التورتيلا الكاملة</option>
+
+                            <!-- المكسرات والبذور -->
+                            <option value="nuts">المكسرات (لوز، كاجو، جوز)</option>
+                            <option value="raw_cashews">الكاجو الخام</option>
+                            <option value="raw_almonds">اللوز الخام</option>
+                            <option value="pistachios">الفستق</option>
+                            <option value="mixed_nuts_premium">المكسرات المختلطة</option>
+                            <option value="pumpkin_seeds">بذور اليقطين</option>
+                            <option value="chia_seeds">بذور الشيا</option>
+                            <option value="flax_seeds">بذور الكتان</option>
+                            <option value="peanut_butter">زبدة الفول السوداني</option>
+                            <option value="almond_butter">زبدة اللوز</option>
+
+                            <!-- الفواكه -->
+                            <option value="banana">الموز</option>
+                            <option value="apple">التفاح</option>
+                            <option value="orange">البرتقال</option>
+                            <option value="strawberry">الفراولة</option>
+                            <option value="kiwi">الكيوي</option>
+                            <option value="pear">الكمثرى</option>
+                            <option value="pineapple">الأناناس</option>
+                            <option value="watermelon">البطيخ</option>
+                            <option value="sour_lemon">الليمون الحامض</option>
+                            <option value="coconut">جوز الهند</option>
+                            <option value="avocado">الأفوكادو</option>
+                            <option value="berries">التوت</option>
+                            <option value="cranberry">التوت البري</option>
+
+                            <!-- الفواكه المجففة -->
+                            <option value="dried_fruits">الفواكه المجففة</option>
+                            <option value="dried_figs">التين المجفف</option>
+                            <option value="dried_peach">الخوخ المجفف</option>
+                            <option value="dried_kiwi">الكيوي المجفف</option>
+
+                            <!-- الخضروات -->
+                            <option value="spinach">السبانخ</option>
+                            <option value="carrot">الجزر</option>
+
+                            <!-- أخرى -->
+                            <option value="whole_grains">الحبوب الكاملة</option>
+                            <option value="oat_flakes">رقائق الشوفان</option>
+                            <option value="gluten_free_grains">الحبوب الخالية من الغلوتين</option>
+                            <option value="extra_virgin_olive_oil">زيت الزيتون الممتاز</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="quantity">الكمية (بالجرام)</label>
+                        <input type="number" id="quantity" placeholder="أدخل الكمية بالجرام" min="1">
+                        <small class="hint">أدخل الكمية بالجرام. مثال: 100 جرام</small>
+                    </div>
+                    
+                    <button id="calculateButton" class="gradient-button">
+                        <i class="fas fa-calculator"></i>
+                        احسب القيم الغذائية
+                    </button>
+                </div>
+
+                <div class="results-section">
+                    <div class="result-item">
+                        <span>السعرات الحرارية:</span>
+                        <span id="caloriesValue">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>البروتين:</span>
+                        <span id="proteinValue">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>الكربوهيدرات:</span>
+                        <span id="carbsValue">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>الدهون:</span>
+                        <span id="fatValue">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tips-section card-effect">
+                <h2><i class="fas fa-lightbulb"></i> نصائح غذائية</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>وقت الوجبات</h3>
+                        <p>تناول وجباتك في أوقات منتظمة يساعد في تنظيم عملية التمثيل الغذائي</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-glass-water"></i>
+                        <h3>شرب الماء</h3>
+                        <p>احرص على شرب 8 أكواب من الماء يومياً للحفاظ على صحة جسمك</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-carrot"></i>
+                        <h3>تنوع الطعام</h3>
+                        <p>تناول مجموعة متنوعة من الأطعمة للحصول على جميع العناصر الغذائية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section card-effect">
+                <h2><i class="fas fa-question-circle"></i> الأسئلة الشائعة</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>كيف يتم حساب السعرات الحرارية؟</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>يتم حساب السعرات الحرارية بناءً على كمية البروتين والكربوهيدرات والدهون في الطعام. كل جرام من البروتين = 4 سعرات، الكربوهيدرات = 4 سعرات، والدهون = 9 سعرات.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>ما هو المقدار اليومي الموصى به من السعرات؟</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>يختلف المقدار حسب العمر والجنس والنشاط البدني. متوسط الاحتياج اليومي للرجال 2500 سعر وللنساء 2000 سعر.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>كيف أحافظ على توازن غذائي صحي؟</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>يُنصح بتناول نسبة متوازنة من العناصر الغذائية: 45-65% كربوهيدرات، 10-35% بروتين، و20-35% دهون من إجمالي السعرات اليومية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toast Notifications -->
+            <div id="toastContainer"></div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
